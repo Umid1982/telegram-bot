@@ -59,6 +59,13 @@ class TelegramService
             return $this->handleHelpCommand($chat_id);
         }
 
+        if ($text === '/start') {
+            return $this->telegram_boot('sendMessage', [
+                'text' => "Добро пожаловать! Используйте команду /help для получения списка доступных команд.",
+                'chat_id' => $chat_id,
+            ]);
+        }
+
         if (empty($text)) {
             return $this->telegram_boot('sendMessage', [
                 'text' => "Пожалуйста, введите модель автомобиля.",
@@ -74,6 +81,6 @@ class TelegramService
         ]);
     }
 }
-//https://api.telegram.org/bot6598185466:AAHbdSeUh_pU2urM9r2i9Yhm-GQlvvaD22k/setWebhook?url=https://ircrgyopyo.sharedwithexpose.com/api/webhook
+//https://api.telegram.org/bot6598185466:AAHbdSeUh_pU2urM9r2i9Yhm-GQlvvaD22k/setWebhook?url=https://oohpjo94np.sharedwithexpose.com/api/webhook
 //https://api.telegram.org/bot6598185466:AAHbdSeUh_pU2urM9r2i9Yhm-GQlvvaD22k/getWebhookInfo
 
