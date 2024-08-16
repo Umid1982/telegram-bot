@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/webhook', [TelegramController::class, 'webhook']);
-//Route::middleware('throttle:5,1')->group(function () {
-////    Route::post('/webhook', [TelegramController::class, 'webhook']);
-//});
+Route::middleware('throttle:5,1')->group(function () {
+    Route::post('/webhook', [TelegramController::class, 'webhook']);
+});
 
